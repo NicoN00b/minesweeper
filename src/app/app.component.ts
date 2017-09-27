@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { createGame } from './game';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
+  public game;
+
+  constructor(){}
+
+  onInit(){
+    this.startNewGame();
+  }
+
+  startNewGame(){
+    this.game = createGame({cols: 16, rows: 16, mines: 48})
+  }
 }

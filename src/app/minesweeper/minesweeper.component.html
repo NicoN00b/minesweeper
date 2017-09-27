@@ -1,0 +1,5 @@
+<div class="board">
+    <row *ng-for="#row of rows"
+         [row]="row"
+         (tile-click)="handleTileClick($event)"></row>
+  </div>
